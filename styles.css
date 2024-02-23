@@ -1,0 +1,59 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid gainsboro;
+}
+
+.nav-items > ul {
+  display: flex;
+  list-style-type: none;
+}
+
+.nav-items > ul > li {
+  padding: 2rem;
+}
+
+.logo {
+  width: 80px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card {
+  background-color: aliceblue;
+  border: 1px solid grey;
+  display: inline-block;
+  padding: 1rem;
+  margin: 60px;
+  cursor: pointer;
+  width: 200px;
+  word-wrap: break-word;
+  height: 400px;
+  /* display: flex; */
+
+  border-radius: 10px;
+}
+
+body {
+  padding: 0 4rem;
+}
+
+.restaurant-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.shimmer-card {
+  width: 200px;
+  height: 300px;
+  border-radius: 10px;
+  background-color: gainsboro;
+  margin: 60px;
+}

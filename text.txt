@@ -1,0 +1,138 @@
+1. INSEPTION:::
+
+-> what is a cdn?
+-> using react cdn
+-> what is crossorigin?
+-> what are async and defer & difference between them?
+
+
+2. IGNITING OUR APP:::
+
+-> what is bundler?examples?
+-> package manager? examples - npm ,yarn
+-> dependency,dev dependency
+-> package.json
+-> package-lock.json :47:10
+-> carat vs tilde in package.json
+-> never put package-lock.json in gitignore
+-> what is cryptography?
+-> always put node_modules in .gitignore cause we can always regenerate from package-lock.json
+-> never touch(modify) anything in node_modules or in package-lock.json
+-> normal javascript files cannot use import or exports,only module javascript files can.
+-> what is dist?
+-> we should put .parcel-cache folder in .gitignore
+-> TRANSITIVE DEPENDENCIES
+-> browserList(for browser Compatibility)
+
+/*
+    -HMR-hot module replacement
+    -File Watcher algorithm(written in c++)
+    -Compatibility with older browser
+    -https on dev environment
+    -Consistent Hashing
+    -Tree Shaking - removing unwanted code
+*/
+
+3. LAYING THE FOUNDATION:::
+
+-> What is polyfill?
+-> babel
+-> babel-plugin-transform-remove-console
+-> Reconcilation(concept of keys)
+-> React.createElement() => object => HTML(dom)
+-> JSX
+-> JSX is not html inside javascript.This is a html like syntax.
+-> difference between html and jsx
+-> JSX => React.createElement() => object => HTML(dom)
+-> Advantage of jsx
+-> React component(functional,classbased)
+-> Name of the component starts with a capital letter
+-> Component composition
+-> Is component hoisted
+
+4. TALK IS CHEAP, SHOW ME THE CODE :::
+
+-> JSX can only have one parent
+-> can i have react fragment inside another react fragment
+-> config driven UI
+-> optional chaining
+-> Props
+-> Virtual DOM
+-> Why do we need virtual DOM
+-> Reconcilation in react
+-> why we need keys
+-> Why react is fast?
+-> React Fiber
+-> Why don't we use index as keys most ?
+
+
+5. LET'S GET HOOKED :::
+
+-> File structure
+-> one way data binding
+-> In react there is one way data binding(defaultly)
+-> states in react
+-> what is hooks 
+-> what is usestate
+-> instead of using normal variables we use state variables (react way).
+-> At the end of the day hooks are just normal functions
+-> The function of the useState hook is to create & maintain state variables.
+-> Why we don't use local variables in react?
+-> one way binding / two way binding
+-> everytime we need to sync your variables with the UI , we use state variables instead of normal variables
+-> How local variables act in react ?
+
+6. EXPLORING THE WORLD :::
+1hr30mins onwards
+-> useEffect
+-> when i load my page what will be called first render or useEffect ? Ans: render is first then useEffect
+-> if the dependency array of useEffect is empty then the useEffect is called once and that to after initial render
+-> if there is any state variable in dependency array of useEffect then useEffect will be called : once after initial render + no. of times the state is updated/rerendered
+-> can i have multiple useEffect?
+-> CROS-(reference Akshay saini yt video)
+-> shimmer 
+-> jsx curly braces
+-> why we do data.json() after fetch
+
+
+7. FINDING THE PATH :::
+
+-> What is the use of useEffect Hook
+-> if we don't have a dependecy array in useEffect, then it means our 
+   useEffect is not dependent on anything.So everytime our component render
+   useEffect will be called.it will be called after each render.(6:00mins onwards)
+
+-> *NEVER CREATE A COMPONENT INSIDE ANOTHER COMPONENT* you can
+    compose the components but never create one inside another.
+    (WE CAN USE A COMPONENT INSIDE ANOTHER BUT NEVER CREATE ONE INSIDE ANOTHER)
+    (recommanded from react official docs)
+    :because if we do so , everytime the parent component is render/rerendered 
+     the child component is created.
+
+-> FEW IMPORTANT THINGS ABOUT HOOKS:
+    ~ never write hooks inside if else
+    ~ never write hooks inside a looping statement also
+
+-> useState is given by react to create state variable for your 
+   functional component.so NEVER create state variable outside 
+   the functional component,because it won't make sense.
+
+-> can i use more than one useEffect(YES)
+-> how to import and use images form local
+-> why cdn is a great place to host your images ?
+
+(36:00 mins onwards...)(starting react routing)
+-> React router dom(installing)
+-> createBrowserRouter help us create routing
+-> Reading react-router-dom documentation
+-> RouterProvider
+-> useRouteError
+-> SPA - single page application(collect information)
+-> There are 2 types of routing(clientside routing & serverside routing);
+-> Link
+
+(1hr 33mins -> Nested Routing...)
+-> outlet
+-> all the children will go into the outlet according to the route
+-> react-router-dom gives us access to routing parameters using a hook (useParams)
+-> Object.values in javascript
