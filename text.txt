@@ -136,3 +136,46 @@
 -> all the children will go into the outlet according to the route
 -> react-router-dom gives us access to routing parameters using a hook (useParams)
 -> Object.values in javascript
+
+
+8. LET'S GET CLASSY :::
+
+(18MINS ONWARDS...)
+-> nested route (/about/profile)
+-> writing a classbased component
+-> the most important thing in a classbased component is render() method
+   you cannot create a class based component without render method.
+-> props in classbased component
+-> states in classbased component
+-> 50mins40sec...(imp) question?
+-> when you load the class constructor is the first thing that called.i.e. we should create states inside constructor
+-> WE DO NOT MUTATE(EDIT/CHANGE) STATE DIRECTLY.
+-> In a class component first constructor is called then render is called.
+-> why useEffect is a great place to do api call.
+
+(1hr15mins ... (lifecycle stuff))
+-> componentDidMount : it will be called after initial render
+-> we initialize our state inside constructor in classbased components.
+
+(1hr49m...)(lifecycle diagram)
+-> the diagram of lifecycle 
+-> react mount things in 2 phase .first phase is render phase second is commit phase.
+-> In the render phase , constructor is called and render is called.
+-> In commit phase react actually updates the DOM.
+-> we can make componentDidMount function async but we cannot make useEffect async WHY?
+-> React completes the render cycle first then it goes to commit phase/cycle.
+
+(2hr25m...)
+-> componentDidUpdate
+-> componentDidMount is called once after initial render and componentDidUpdate will be called after every rerender
+-> component Unmounting (componentWillUnmount)
+
+(2h42m)(everytime my state changes my useEffect will update because in the dependency array i put count (HOW TO GET THE SAME FUNCTIONALITY IN CLASS BASED COMPONENTS ?))
+-> ANS 👆
+
+-> what is the use of componentWillUnmount?(2h52m...)?
+-> why do we unmount?
+-> this object is shared between all the methods of a class
+-> WHEN YOU ARE CREATING A MESS, YOU HAVE TO CLEAN THAT MESS ALSO.
+
+-> How to acheive componentWillUnmount functionality in functional component(3h8m...)
