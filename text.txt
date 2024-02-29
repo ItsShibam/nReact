@@ -179,3 +179,35 @@
 -> WHEN YOU ARE CREATING A MESS, YOU HAVE TO CLEAN THAT MESS ALSO.
 
 -> How to acheive componentWillUnmount functionality in functional component(3h8m...)
+
+
+9. OPTIMIZING OUR APP :::
+
+-> when ,how & why should we build our own hooks?
+-> what is modularity? ans: modularity means we will broke down code into meaningful pieces
+
+-> (32m - 1h)(creating our own hook)
+-> (57m50...)(online/offline hook)
+
+-> why we create custom hooks instead of simple functions?
+   ans: ask yourself, 
+   ->can we create state inside react?NO
+   ->will react trigger Reconcilation for your normal function? NO
+   that's why we create react hooks instead of normal functions.OK
+
+->(1h29m...) whenever you write eventlisteners you have to cleanup them. Otherwise the browser will keep holding the overlapping eventlistener,this may affect the performance.
+
+->(1h56m...)(chunking/code spliting/dynamic bundling/lazy loading/ ondemand loading/dynamic imports)
+-> chunking in action 2h19m
+-> lazy()
+-> when you are loading your component in demand/lazy loading , React tries to 
+   suspend the loading.
+-> Suspense (2h29m)
+-> Suspense component takes a props fallback, in the fallback we have to give
+   the component which we want to display(shimmer kind of stuff) untill and unless the main component
+   is loaded.
+-> lazy loading Instamart and About component.
+-> NEVER EVER DYNAMICLY LOAD YOUR COMPONENT INSIDE ANOTHER COMOPONENT.
+
+[LAST 30 MINS FULL CONCEPT OF LAZY LOADING (V.V.I)]
+

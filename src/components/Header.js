@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import LOGO from "../assets/img/logofood.png";
 import { Link } from "react-router-dom";
+import useOnline from "../utils/useOnline";
 
 export const Title = () => {
   return (
@@ -12,6 +13,7 @@ export const Title = () => {
 
 const Header = () => {
   let [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isOnline = useOnline();
 
   // useEffect(() => {
   //   console.log("useEffect inside Header");
@@ -29,8 +31,14 @@ const Header = () => {
           <li>
             <Link to={"/about"}>About</Link>
           </li>
-          <li><Link to={"/contact"}>Contact us</Link></li>
+          <li>
+            <Link to={"/contact"}>Contact us</Link>
+          </li>
           <li>Cart</li>
+          <li>
+            <Link to={"/instamart"}>Instamart</Link>
+          </li>
+          {isOnline ? <li>🟢online</li> : <li>🔴offline</li>}
         </ul>
       </div>
       {isLoggedIn ? (
