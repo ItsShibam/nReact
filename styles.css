@@ -1,4 +1,4 @@
-.header {
+/* .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -33,7 +33,6 @@
   width: 200px;
   word-wrap: break-word;
   height: 400px;
-  /* display: flex; */
 
   border-radius: 10px;
 }
@@ -56,4 +55,9 @@ body {
   border-radius: 10px;
   background-color: gainsboro;
   margin: 60px;
-}
+} */
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

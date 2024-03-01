@@ -211,3 +211,26 @@
 
 [LAST 30 MINS FULL CONCEPT OF LAZY LOADING (V.V.I)]
 
+
+10. JO DIKHTA HAI, WO BIKTA HAI :::
+
+-> writing inline styles in jsx
+-> who maintains material UI ?
+-> can we use multiple UI library in a single project ?
+-> pros and cons of using UI library 
+-> Methods of styling 
+   > Normal native Css
+   > scss
+   > Inline css
+   > Component Libraries : material UI, base UI ,chakra UI etc.
+   > Styled components
+   > CSS frameworks : Tailwind Css etc.
+   (go explore all the methods mention above)
+
+-> tailwind using CDN
+-> we can use tailwind by importing in project (installation guide in the docs)
+-> what is postcss ?
+
+-> square bracket notation(using this we can give custom values in tailwind)
+   ex: suppose we want to give exactly 200px width : w-[200px]
+

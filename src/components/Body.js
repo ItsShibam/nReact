@@ -22,14 +22,15 @@ const Body = () => {
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=20.2568819&lng=85.7791854&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data.json();
+    console.log(json);
     console.log(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setAllRestaurants(
-      json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
 
@@ -43,13 +44,16 @@ const Body = () => {
       </h1>
     );
 
+  //early return
+  // if (!filteredRestaurants) return;
+
   return (
     <>
-      <div className="search-container">
+      <div className="search-container rounded-md">
         <input
           placeholder="search..."
           type="text"
-          className="search-input"
+          className="search-input p-3 m-5 mr-0 outline-none border border-gray-200 rounded-md focus:bg-green-50 "
           value={searchInput}
           onChange={(e) => {
             setSearchInput(e.target.value);
@@ -58,7 +62,8 @@ const Body = () => {
           }}
         />
         <button
-          className="search-button"
+          className="search-button p-3 m-5 rounded-md ml-1 bg-purple-600 text-white"
+          // style={{ backgroundColor: "green", color: "white" }}
           onClick={() => {
             const data = filterData(searchInput, allRestaurants);
             setFilteredRestaurants(data);
@@ -71,7 +76,7 @@ const Body = () => {
       {filteredRestaurants.length == 0 ? (
         <Shimmer />
       ) : (
-        <div className="restaurant-list">
+        <div className="restaurant-list flex flex-wrap">
           {filteredRestaurants.map((r) => (
             <Link to={"/restaurants/" + r.info?.id}>
               <RestaurantCard key={r.info?.id} {...r.info} />

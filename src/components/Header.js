@@ -6,7 +6,7 @@ import useOnline from "../utils/useOnline";
 export const Title = () => {
   return (
     <a href="/">
-      <img alt="logo" className="logo" src={LOGO} />
+      <img alt="logo" className="logo w-28" src={LOGO} />
     </a>
   );
 };
@@ -21,21 +21,21 @@ const Header = () => {
 
   // console.log("rendering header");
   return (
-    <div className="header">
+    <div className="header flex justify-between border shadow-lg bg-pink-50 sm:bg-blue-50 md:bg-yellow-50">
       <Title />
       <div className="nav-items">
-        <ul>
-          <li>
+        <ul className="flex items-center py-10 font-semibold">
+          <li className="m-2">
             <Link to={"/"}>Home</Link>
           </li>
-          <li>
+          <li className="m-2">
             <Link to={"/about"}>About</Link>
           </li>
-          <li>
+          <li className="m-2">
             <Link to={"/contact"}>Contact us</Link>
           </li>
-          <li>Cart</li>
-          <li>
+          <li className="m-2">Cart</li>
+          <li className="m-2">
             <Link to={"/instamart"}>Instamart</Link>
           </li>
           {isOnline ? <li>🟢online</li> : <li>🔴offline</li>}
