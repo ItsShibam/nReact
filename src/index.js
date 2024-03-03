@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from "react";
+import React, { lazy, Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import * as obj from "./components/Header";
@@ -14,18 +14,27 @@ import Profile from "./components/ProfileClass";
 import Shimmer from "./components/Shimmer";
 // import Instamart from "./components/Instamart";
 
+import UserContext from "./utils/UserContext";
+
 //IMPORTING COMPONENT THAT NEED TO LAZY LOAD ⬇👇
 const Instamart = lazy(() => import("./components/Instamart"));
 const About = lazy(() => import("./components/About"));
 
-const AppLayout = () => (
-  <>
-    <Header />
-    {/*outlet*/}
-    <Outlet />
-    <Footer />
-  </>
-);
+const AppLayout = () => {
+  const [user, setUser] = useState({
+    name: "Shibam Patra",
+    email: "svmiamin@gmail.com",
+  });
+
+  return (
+    <UserContext.Provider value={{ user: user, setUser: setUser }}>
+      <Header />
+      {/*outlet*/}
+      <Outlet />
+      <Footer />
+    </UserContext.Provider>
+  );
+};
 
 const appRouter = createBrowserRouter([
   {
@@ -35,7 +44,14 @@ const appRouter = createBrowserRouter([
     children: [
       {
         path: "/",
-        element: <Body />,
+        element: (
+          <Body
+            user={{
+              name: "React Learner",
+              email: "example@gmail.com",
+            }}
+          />
+        ),
       },
       {
         path: "/about",

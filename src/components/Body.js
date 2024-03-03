@@ -1,15 +1,18 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 // import { restaurantList } from "../constants";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 import useOnline from "../utils/useOnline";
+// import UserContext from "../utils/UserContext";
+import UserContext from "../utils/UserContext.js";
 
 const Body = () => {
   const [searchInput, setSearchInput] = useState("");
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const { user, setUser } = useContext(UserContext);
   // console.log("render()");
 
   useEffect(() => {
@@ -72,7 +75,31 @@ const Body = () => {
           Search - {searchInput}
         </button>
       </div>
-
+      <input
+        placeholder="name..."
+        className="border border-black"
+        type="text"
+        value={user.name}
+        onChange={(e) =>
+          setUser({
+            name: e.target.value,
+            email: user.email,
+          })
+        }
+      />
+      <input
+        placeholder="email..."
+        className="border border-black"
+        type="text"
+        value={user.email}
+        onChange={(e) =>
+          setUser({
+            email: e.target.value,
+            name: user.name,
+          })
+        }
+      />{" "}
+      - this is a demonstration of changing context from a component.
       {filteredRestaurants.length == 0 ? (
         <Shimmer />
       ) : (

@@ -234,3 +234,45 @@
 -> square bracket notation(using this we can give custom values in tailwind)
    ex: suppose we want to give exactly 200px width : w-[200px]
 
+
+
+11. DATA IS THE NEW OIL :::
+
+-> What is the difference between state and props?
+-> if we have to pass data from one component to another component we can use props.
+-> PROPS DRILLING
+-> is props drilling a good way ?
+-> disadvantage of using props drilling
+-> start Building the Accordion(58m...)
+-> making the accordion controlable.i.e. if one is open, then other are closed(1h9m...)
+-> we cannot modify state of another sibling component from one component.
+-> LIFTING THE STATE UP(1h15m... to close to 1h45m)
+-> build a controlable accordion component in react using the lift the state up concept.(v.imp)
+-> tillnow we studied: >props drilling, lifting the state up, react dev tools
+
+-> profiler in react dev tools
+
+(2h9mins...)👇
+
+-> React Context
+-> createContext
+-> can I have multiple context in my app?
+-> context is like global variable in react.but instead of global variable we use 
+   context because react keep tracks of it, similarly like we use state variables 
+   instead of local variables.
+
+-> If react context is there, then why do even need props then?
+-> state and props are tide to the component,but context 
+   is a central store.
+
+(2h34m... to end)(v.imp.)
+-> useContext is a hook. How to use this inside the Class based component?
+-> Using context inside class based component.(2h36m...)
+-> Context consumer
+
+(2h42m...)
+-> Modifing context 
+-> we can modify contex using provider.
+
+-> can we have multiple nested context?
+

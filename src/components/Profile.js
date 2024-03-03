@@ -12,7 +12,7 @@ const Profile = (props) => {
     };
   }, []);
   return (
-    <>
+    <div className="border border-pink-300">
       <h2>Profile Component</h2>
       <h3>Name : {props.name}</h3>
       <h4>count:{count}</h4>
@@ -24,7 +24,7 @@ const Profile = (props) => {
       >
         count
       </button>
-    </>
+    </div>
   );
 };
 export default Profile;

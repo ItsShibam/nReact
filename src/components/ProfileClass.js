@@ -36,8 +36,8 @@ class Profile extends Component {
   render() {
     console.log("Child - render "+this.props.name);
     return (
-      <div>
-        <h2>Profile from Class</h2>
+      <div className="border border-pink-400">
+        <h2 className="text-2xl font-bold">Profile from Class</h2>
         <img src={this.state.userInfo.avatar_url}/>
         <h3>Name : {this.state.userInfo.name}</h3>
         <h3>Location : {this.state.userInfo.location}</h3>
