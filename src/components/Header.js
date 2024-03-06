@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import useOnline from "../utils/useOnline";
 import UserContext from "../utils/UserContext";
 
+import { useSelector } from "react-redux";
+
 export const Title = () => {
   return (
     <a href="/">
@@ -17,6 +19,8 @@ const Header = () => {
   const isOnline = useOnline();
 
   const { user } = useContext(UserContext);
+
+  const cartItems = useSelector((s) => s.cart.items);
 
   // useEffect(() => {
   //   console.log("useEffect inside Header");
@@ -36,12 +40,12 @@ const Header = () => {
         <li className="m-2">
           <Link to={"/contact"}>Contact us</Link>
         </li>
-        <li className="m-2">Cart</li>
         <li className="m-2">
           <Link to={"/instamart"}>Instamart</Link>
         </li>
-        {isOnline ? <li>🟢online</li> : <li>🔴offline</li>}
+        <li className="m-2"><Link to={"/cart"}>Cart-{cartItems.length}</Link></li>
       </ul>
+        {isOnline ? <span>🟢</span> : <span>🔴</span>}
       <h2 className="font-semibold text-green-500">{user.name}</h2>
       {isLoggedIn ? (
         <button className="underline" onClick={() => setIsLoggedIn(false)}>

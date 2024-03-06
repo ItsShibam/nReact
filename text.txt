@@ -276,3 +276,49 @@
 
 -> can we have multiple nested context?
 
+
+
+12. LET'S BUILD OUR STORE:::
+
+-> There are tow layer in frontend applicatoin i.e. Ui layer & data layer.
+-> Ui layer and data layer work both in sync
+-> when we're building big production ready full fledged application handleing data for it 
+   is very critical, for that a lot of company use a library called redux.
+-> why do we even need redux or any state management library?
+-> There are cons of redux as well.
+   > it is complex to set up.
+   > it has a huge learning curve.
+
+-> first thing first, redux is different than react.
+
+-> Redux toolkit(checkout redux toolkit docs)
+-> what is the diff between redux vs redux toolkit?
+-> (19m:47s...) architecture of redux toolkit.
+-> what is redux store at the end of the day? ans: at the end of the day redux store is a whole big object.
+-> redux store is like a central object. it is different than react application.and all the component from react application can access the store.
+-> should we have multiple store? ans: In redux we have a single store for holding everything.
+-> each store have different sections,which are called SLICES.
+-> our component can not directly modify the store. 
+-> (51m...) how to read from the store.
+-> (1h9m...) redux coding practical
+-> installing redux toolkit and react-redux
+-> configureStore
+-> Provider
+-> we can provide the store to the whole app or to a single component also.
+-> createSlice
+-> 1h22 (creating slices)V.imp
+-> reducer function doesn't return anything
+-> exporting actions and reducers(1h35)
+
+(1h44m40s)
+-> putting slice inside the store.
+-> can we have multiple store in an application?
+
+(2h:2m)
+-> dispatching in action
+
+(2h:35m...)(v imp)
+-> useSelector subscribes to the store.
+
+o-> WHEN YOU CLICK ON THE ADD/+ BUTTON , IT DISPATCHES AN ACTION,WHICH CALLS THE 
+    REDUCER FUNCTION,WHICH UPDATES THE SLICE OF OUR REDUX STORE.

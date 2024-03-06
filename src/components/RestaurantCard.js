@@ -20,7 +20,7 @@ const RestaurantCard = ({
         alt="food"
       />
       <h2 className="font-bold text-xl">{name}</h2>
-      <h3>{cuisines.join(", ")}</h3>
+      <h3>{cuisines?.join(", ")}</h3>
       <h4>{avgRatingString} stars</h4>
       <h5>{isOpen}</h5>
       <h6 className="text-green-500">
